@@ -1,6 +1,6 @@
 # Covid-19 Vaccination Analysis
 
-![Covid19-](https://github.com/mikeolaniyi/Covid19_Vaccination_Analysis_in_SQL/assets/120651356/ab54c8f4-7465-49b9-8502-c9f758497889)
+![Covid19-](https://github.com/NEGIx13/Covid19_Vaccination_Analysis/blob/main/262491040-ab54c8f4-7465-49b9-8502-c9f758497889.jpg)
 
 
 
@@ -18,7 +18,7 @@ The datasets of this project are from WHO.
  - Total Cases vs Total Deaths in Nigeria
 
 
-![Covid-19 Vaccination Analysis](https://github.com/mikeolaniyi/Covid19_Vaccination_Analysis_in_SQL/assets/120651356/6baecef0-83d1-46b3-89f6-1528fdd01c7b)
+![Covid-19 Vaccination Analysis](https://github.com/NEGIx13/Covid19_Vaccination_Analysis/blob/main/266866814-6baecef0-83d1-46b3-89f6-1528fdd01c7b.png)
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ```SQL
