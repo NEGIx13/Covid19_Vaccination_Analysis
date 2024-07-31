@@ -259,7 +259,7 @@ FROM TotalCasesPercentageInfected
 
 
 
--- VIEW 7 Total Cases vs Total Deaths in Nigeria
+-- VIEW 7 Total Cases vs Total Deaths in India
 
 CREATE VIEW TotalCasesvsTotalDeaths AS
 SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS DeathsPercentage
