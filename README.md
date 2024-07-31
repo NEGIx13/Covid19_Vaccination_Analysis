@@ -15,7 +15,7 @@ The datasets of this project are from WHO.
  - Continents with the highest death count per population
  - Countries with Highest Infection Rate Compared to Population
  - Total cases & population percentage infected
- - Total Cases vs Total Deaths in Nigeria
+ - Total Cases vs Total Deaths in India
 
 
 ![Covid-19 Vaccination Analysis](https://github.com/NEGIx13/Covid19_Vaccination_Analysis/blob/main/266866814-6baecef0-83d1-46b3-89f6-1528fdd01c7b.png)
@@ -45,7 +45,7 @@ ORDER BY 1,2
 
 SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS DeathsPercentage
 FROM PortfolioProject..CovidDeaths
-where location like '%Nigeria' 
+where location like '%India' 
 and continent is not null
 ORDER BY 1,2
 
@@ -57,7 +57,7 @@ ORDER BY 1,2
 
 SELECT location, date,population total_cases, (total_cases/population)*100 AS PercentPopulationInfected
 FROM PortfolioProject..CovidDeaths
---where location like '%Nigeria' and continent is not null 
+--where location like '%India' and continent is not null 
 ORDER BY 1,2
 
 
@@ -65,7 +65,7 @@ ORDER BY 1,2
 
 SELECT location, population, MAX(total_cases) AS HighestInfectionCount, MAX((total_cases/population))*100 AS PercentPopulationInfected
 FROM PortfolioProject..CovidDeaths
---where location like '%Nigeria'
+--where location like '%India'
 WHERE continent is not null 
 GROUP BY location, population
 ORDER BY PercentPopulationInfected DESC	
@@ -75,7 +75,7 @@ ORDER BY PercentPopulationInfected DESC
 
 SELECT location, MAX(cast(total_deaths as int)) AS TotalDeathsCount
 FROM PortfolioProject..CovidDeaths
---where location like '%Nigeria'
+--where location like '%India'
 WHERE continent is not null 
 GROUP BY location
 ORDER BY TotalDeathsCount DESC	
@@ -86,7 +86,7 @@ ORDER BY TotalDeathsCount DESC
 
 SELECT location, MAX(cast(total_deaths as int)) AS TotalDeathsCount
 FROM PortfolioProject..CovidDeaths
---where location like '%Nigeria'
+--where location like '%India'
 WHERE continent is null 
 GROUP BY location
 ORDER BY TotalDeathsCount DESC	
@@ -96,7 +96,7 @@ ORDER BY TotalDeathsCount DESC
 
 Select continent, MAX(cast(Total_deaths as int)) as TotalDeathCount
 From PortfolioProject..CovidDeaths
---Where location like '%Nigeria%''
+--Where location like '%India%''
 Where continent is not null 
 Group by continent
 order by TotalDeathCount desc
@@ -107,7 +107,7 @@ order by TotalDeathCount desc
 
 SELECT SUM(new_cases) AS Total_cases, SUM(cast(new_deaths as int)) AS Total_Deaths, SUM(cast(new_deaths as int))/ SUM(new_cases)*100 AS DeathsPercentage
 FROM PortfolioProject..CovidDeaths
---where location like '%Nigeria'
+--where location like '%India'
 WHERE continent is not null 
 --GROUP BY date
 ORDER BY 1,2
@@ -199,7 +199,7 @@ CREATE VIEW GlobalDeaths AS
 SELECT SUM(new_cases) AS Total_cases, SUM(cast(new_deaths as int)) AS Total_Deaths, 
 SUM(cast(new_deaths as int))/ SUM(new_cases)*100 AS DeathsPercentage
 FROM PortfolioProject..CovidDeaths
---where location like '%Nigeria'
+--where location like '%India'
 WHERE continent is not null 
 --GROUP BY date
 --ORDER BY 1,2
@@ -210,7 +210,7 @@ WHERE continent is not null
 CREATE VIEW Death_by_Continent AS
 Select continent, MAX(cast(Total_deaths as int)) as TotalDeathCount
 From PortfolioProject..CovidDeaths
---Where location like '%Nigeria%''
+--Where location like '%India%''
 Where continent is not null 
 Group by continent
 --order by TotalDeathCount desc
@@ -221,7 +221,7 @@ Group by continent
 CREATE VIEW CountryWithHighestDeaths AS
 SELECT location, MAX(cast(total_deaths as int)) AS TotalDeathsCount
 FROM PortfolioProject..CovidDeaths
---where location like '%Nigeria'
+--where location like '%India'
 WHERE continent is not null 
 GROUP BY location
 --ORDER BY TotalDeathsCount DESC	
@@ -235,7 +235,7 @@ FROM CountryWithHighestDeaths
 CREATE VIEW HighestInfectionRate AS
 SELECT location, population, MAX(total_cases) AS HighestInfectionCount, MAX((total_cases/population))*100 AS PercentPopulationInfected
 FROM PortfolioProject..CovidDeaths
---where location like '%Nigeria'
+--where location like '%India'
 WHERE continent is not null 
 GROUP BY location, population
 --ORDER BY PercentPopulationInfected DESC	
@@ -251,7 +251,7 @@ FROM HighestInfectionRate
 CREATE VIEW TotalCasesPercentageInfected AS
 SELECT location, date,population total_cases, (total_cases/population)*100 AS PercentPopulationInfected
 FROM PortfolioProject..CovidDeaths
---where location like '%Nigeria' and continent is not null 
+--where location like '%India' and continent is not null 
 --ORDER BY 1,2
 
 SELECT* 
@@ -264,7 +264,7 @@ FROM TotalCasesPercentageInfected
 CREATE VIEW TotalCasesvsTotalDeaths AS
 SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS DeathsPercentage
 FROM PortfolioProject..CovidDeaths
-where location like '%Nigeria' 
+where location like '%India' 
 --and continent is not null
 --ORDER BY 1,2
 
@@ -277,7 +277,7 @@ FROM TotalCasesvsTotalDeaths
 CREATE VIEW CasesvsDeaths AS
 SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS DeathsPercentage
 FROM PortfolioProject..CovidDeaths
---where location like '%Nigeria' and continent is not null
+--where location like '%India' and continent is not null
 --ORDER BY 1,2
 
 SELECT*
